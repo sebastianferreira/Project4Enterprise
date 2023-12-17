@@ -1,0 +1,86 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<!-- accountantHome.jsp -->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CNT 4714 Project 4 Accountant Home Page</title> 
+    <style type="text/css">
+       body {
+           background-color:black;
+           color:lightseagreen;
+           font-size: 2em;
+           font-family: Verdana, Arial, sans-serif;
+        }
+       input {
+           background-color:blanchedalmond;
+           color: black;
+           font-size:0.5em;
+        }
+        h1{
+            color:yellow;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            display:  block;
+            background-color: black;
+            color:green;
+        }
+        p{
+            color:white;
+            font-size:medium;
+            text-align:center;
+        }
+        .button-container{
+            text-align:center;
+            margin-top:20px;
+        }
+        h6{
+            text-align:center;
+            color:white;
+        }
+   </style>  
+</head>
+<body>
+    <h1>Welcome to the Fall 2023 Project 4 Enterprise System</h1>
+    <h2>A Servlet/JSP-based Multi-tiered Enterprise Application Using a Tomcat Container</h2><br><hr>
+    <p>You are connected to the project 4 Enterprise System database as a <span style="color: red;">accountant-level</span> user. </p>
+    <p>Please select the operation you would like to perform from the list below.</p><br>
+    
+    <form action="AccountantServlet" method="post">
+        <p><input type="radio" id="option1" name="command" value="option1">
+            <label for="html">Get the maximum status value of all suppliers(returns a maximum value)</label></p>
+
+        <p><input type="radio" id="option2" name="command" value="option2">
+            <label for="html">Get the total weight of all parts(Returns a sum)</label></p>
+
+        <p><input type="radio" id="option3" name="command" value="option3">
+            <label for="html">Get the total number of shipments</label></p>
+
+        <p><input type="radio" id="option4" name="command" value="option4">
+        <label for="html">Get the name and number of workers of the job with the most workers(Returns two values)</label></p>
+
+        <p><input type="radio" id="option5" name="command" value="option5">
+            <label for="html">List the name and status of every supplier</label></p>
+        <div class="button-container">
+        <input type="submit" value="Execute Command">
+        <input type="button" value="Clear Results" onclick="clearSelection()">
+        </div>
+    </form>
+    
+    <script>
+        function clearSelection() {
+            var radioButtons = document.getElementsByName('command');
+            for(var i = 0; i < radioButtons.length; i++)
+                radioButtons[i].checked = false;
+        }
+    </script>
+    <br><p>All execution results will appear below this line.</p><hr>
+    <h6>Execution results:</h6>
+        <p><%= request.getAttribute("result") != null ? request.getAttribute("result") : "No results yet." %></p>
+
+</body>
+</html>

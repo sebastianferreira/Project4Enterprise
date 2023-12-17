@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- authentication.html -->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CNT 4714 Project 4 Authentication Page</title> 
+    <style type="text/css">
+       body {
+           background-color:lavender;
+           color:lightseagreen;
+           font-size: 2em;
+           font-family: Verdana, Arial, sans-serif;
+        }
+       input {
+           background-color:blanchedalmond;
+           color: black;
+           font-size:0.5em;
+        }
+        h1{
+            text-align: center
+        }
+        h2{
+            text-align: center
+        }
+        h3{
+            color: red;
+            text-align: center
+        }
+   </style>  
+</head>
+<body>
+    <h1>Welcome to the Fall 2023 Project 4 Enterprise System</h1>
+    <h2>A Servlet/JSP-based Multi-tiered Enterprise Application Using a Tomcat Container</h2>
+    <h3>User Authentication Page</h3>
+    
+    <div class="white-line"></div>
+    <form action = "/project4/authentication" method = "get" style="text-align:center">
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Click To Authenticate">
+    </form>
+        <div class="white-line"></div>
+</body>
+</html>

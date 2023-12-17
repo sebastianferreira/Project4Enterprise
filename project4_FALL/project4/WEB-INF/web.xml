@@ -1,0 +1,17 @@
+<web-app>
+    <!--3 tier Servlet/JSP-based Multi-tiered Enterprise Application Using a Tomcat Container -->
+
+    <display-name>
+        CNT 4714 Fall 2023 Project 4 Servlet
+    </display-name>
+    <description>
+        This is a 3 tier Servlet/JSP-based Multi-tiered Enterprise Application Using a Tomcat Container
+    </description>
+    
+    <!-- Welcome file list -->
+    <welcome-file-list>
+        <welcome-file>authentication.html</welcome-file>
+    </welcome-file-list>
+
+
+</web-app>
